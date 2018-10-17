@@ -10,7 +10,9 @@ libraries:
   - zangerrinus/bootstrap
 
 regions:
-  content: "Main content"
   header: "Header"
+  subheader_left: "Subheader left"
+  subheader_right: "Subheader right"
+  content: "Main content"
   sidebar: "Sidebar"
   footer: "Footer"
