@@ -1,8 +1,6 @@
 <header class="navbar navbar-expand-md border-bottom" role="banner">
   <div class="container">
-    <div class="row">
-      {{ page.header }}
-    </div>
+    {{ page.header }}
   </div>
 </header>
 
@@ -34,7 +32,7 @@
     </div>
 
     {% if page.sidebar %}
-    <aside class="col-md-4" role="complementary">
+    <aside class="col-md-4 border-left" role="complementary">
         {{ page.sidebar }}
     </aside>
     {% endif %}
