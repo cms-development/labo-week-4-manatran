@@ -1,29 +1,33 @@
-<div class="container">
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+<header class="row navbar navbar-expand-md border-bottom" role="banner">
+  <div class="container">
+    <div class="row">
+      {{ page.header }}
+    </div>
+  </div>
+</header>
 
-    <div class="layout-content">
-    <h2>Ik spring uit een vliegmachien</h2>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      <h2>Toeter toeter toeter toeter toeter, met romana op de scooter</h2>
       {{ page.content }}
-    </div>{# /.layout-content #}
+      {# /.layout-content #}
+    </div>
 
     {% if page.sidebar %}
-      <aside class="layout-sidebar-first" role="complementary">
+    <aside class="col-md-4" role="complementary">
         {{ page.sidebar }}
-      </aside>
+    </aside>
     {% endif %}
+  </div>
+</main>
 
-  </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}
+{% if page.footer %}
+<footer class="container" role="contentinfo">
+  {{ page.footer }}
+</footer>
+{% endif %}
+{# /.layout-container #}

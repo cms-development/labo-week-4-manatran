@@ -1,29 +1,50 @@
+<header class="row navbar navbar-expand-md border-bottom" role="banner">
+  <div class="container">
+    <div class="row">
+      {{ page.header }}
+    </div>
+  </div>
+</header>
+
 <div class="container">
-
-  <header role="banner">
-    {{ page.header }}
-  </header>
-
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="layout-content">
-    <h2>Toeter toeter toeter toeter toeter, met romana op de scooter</h2>
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar }}
-      </aside>
+  <div class="row">
+    {% if page.subheader_left %}
+    <section class="col-sm p-3 mb-5 bg-dark text-white">
+      {{ page.subheader_left }}
+    </section>
     {% endif %}
 
-  </main>
+    {% if page.subheader_right %}
+    <section class="col-sm p-3 mb-5 bg-dark text-white">
+      {{ page.subheader_right }}
+    </section>
+    {% endif %}
+  </div>
+</div>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+<main role="main" class="container mb-5">
+  <div class="row">
 
-</div>{# /.layout-container #}
+    <div class="col-md-8">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      {{ page.content }}
+      {# /.layout-content #}
+    </div>
+
+    {% if page.sidebar %}
+    <aside class="col-md-4" role="complementary">
+        {{ page.sidebar }}
+    </aside>
+    {% endif %}
+
+  </div>
+</main>
+
+{% if page.footer %}
+<footer class="footer">
+  <div class="container">
+    {{ page.footer }}
+  </div>
+</footer>
+{% endif %}
+{# /.layout-container #}
