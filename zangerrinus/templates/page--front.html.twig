@@ -6,19 +6,21 @@
   </div>
 </header>
 
-<div class="container">
-  <div class="row">
-    {% if page.subheader_left %}
-    <section class="col-sm p-3 bg-dark text-white">
-      {{ page.subheader_left }}
-    </section>
-    {% endif %}
+<div class="bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      {% if page.subheader_left %}
+      <section class="col-sm p-3">
+        {{ page.subheader_left }}
+      </section>
+      {% endif %}
 
-    {% if page.subheader_right %}
-    <section class="col-sm p-3 bg-dark text-white">
-      {{ page.subheader_right }}
-    </section>
-    {% endif %}
+      {% if page.subheader_right %}
+      <section class="col-sm p-3">
+        {{ page.subheader_right }}
+      </section>
+      {% endif %}
+    </div>
   </div>
 </div>
 

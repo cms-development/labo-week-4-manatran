@@ -4,25 +4,9 @@ var gulp = require('gulp'),
   eslint = require('gulp-eslint'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps'),
-  imagemin = require('gulp-imagemin'),
-  pngquant = require('imagemin-pngquant');
+  sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('imagemin', function () {
-  return gulp.src('./src/images/*')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{
-        removeViewBox: false
-      }],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest('./images'));
-});
-
-
-gulp.task('sass', function () {
-  console.log("sass xd")
+gulp.task('sass', () => {
   gulp.src('./src/sass/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -38,7 +22,7 @@ function isFixed(file) {
   return file.eslint != null && file.eslint.fixed;
 }
 
-gulp.task('eslint', function () {
+gulp.task('eslint', () => {
   gulp.src(['./src/js/main.js'])
     .pipe(eslint({
 
@@ -166,12 +150,12 @@ gulp.task('eslint', function () {
     .pipe(gulpIf(isFixed, gulp.dest('./js/')));;
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   livereload.listen();
 
   gulp.watch('./src/sass/styles.scss', ['sass']);
   gulp.watch('./src/js/main.js', ['eslint']);
-  gulp.watch(['./css/style.css', './js/main.js'], function (files) {
+  gulp.watch(['./css/style.css', './js/main.js'], (files) => {
     livereload.changed(files)
   });
 });
